@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import Fastify, { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
-import fastifyCors from 'fastify-cors';
+import fastifyCors from '@fastify/cors';
 
 dotenv.config();
 
