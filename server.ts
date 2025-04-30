@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import Fastify, { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import fastifyCors from '@fastify/cors';
 import spotifyLogin from './api/auth/spotifyLogin';
+import contextRouter from './api/mcp/contextRouter';
 // import fs from 'fs';
 
 dotenv.config({ path: '.env.local' });
@@ -27,6 +28,7 @@ fastify.register(fastifyCors, {
 });
 
 fastify.register(spotifyLogin, { prefix: '/api/auth' });
+fastify.register(contextRouter, { prefix: '/api/mcp' });
 
 // Health Check Route
 fastify.get('/api/health', async (request: FastifyRequest, reply: FastifyReply) => {

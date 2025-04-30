@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec 'NODE_ENV=local ts-node' server.ts",
+    "dev": "nodemon --exec ts-node -r tsconfig-paths/register server.ts",
     "build": "tsc",
     "start": "node dist/server.js"
   },
@@ -25,5 +25,8 @@
     "openai": "^4.95.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^4.2.0"
   }
 }
